@@ -4,7 +4,7 @@
 
 - [ ] Design role separation into the architecture before writing business logic. No single role should be a superset of all others. Example: a `GUARDIAN` role that can only pause, an `OPERATOR` for routine parameter changes, and an `ADMIN` (multisig) for upgrades and critical changes.
 
-- [ ] No single key should be able to cause irreversible damage to the protocol on its own. Any action that could drain funds, brick the protocol, or permanently alter its behaviour must require multiple independent signers. The signer threshold must scale with protocol risk exposure: at launch or below $1M TVL use at least 3-of-5; above $1M TVL increase to at least 4-of-7; above $10M TVL require at least 5-of-9 or more. As TVL grows, revisit signer counts and confirmation thresholds on a defined schedule. A governance configuration appropriate for a small protocol is not appropriate for a large one.
+- [ ] No single key should be able to cause irreversible damage to the protocol on its own. Any action that could drain funds or permanently alter its behaviour must require multiple independent signers - at minimum 3-of-5. Signer thresholds must scale with TVL - the larger the protocol grows, the higher the confirmation threshold should be. Revisit and adjust your multisig configuration on a defined schedule as TVL grows. A governance setup appropriate for a small protocol is not appropriate for a large one.
 
 - [ ] Contracts must be pausable. A single key should be sufficient to pause - speed is critical during an active exploit. Unpausing should require 2-3 keys to prevent accidental or malicious unpause before the issue is resolved.
 
