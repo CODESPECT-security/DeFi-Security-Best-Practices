@@ -14,7 +14,7 @@
 
 - [ ] Every non-obvious implementation decision must have an inline comment explaining the reasoning - these are the exact spots auditors and incident responders will stop and question.
 
-- [ ] All privileged keys must be on hardware wallets with no exceptions - including keys used for what seem like temporary or non-critical deployments.
+- [ ] Privileged keys should be secured using hardware wallets wherever possible, including those used for temporary or non-critical deployments. A dedicated emergency pausing role may be assigned to an immediately accessible privileged key to enable rapid response, provided it is strictly limited in scope (pause-only) and supported by monitoring or automated controls.
 
 - [ ] Every deployment script must go through the same review process as production contract code. Scripts that interact with live contracts carry the same risk as the contracts themselves.
 
